@@ -1,10 +1,9 @@
 import inquirer
+import curses
+import menu as menu
 
-questions = [
-  inquirer.Text('name', message="What's your name"),
-  inquirer.Text('surname', message="What's your surname"),
-  inquirer.Text('phone', message="What's your phone number",
-                validate=lambda _, x: re.match('\+?\d[\d ]+\d', x),
-                )
-]
-answers = inquirer.prompt(questions)
+def main():
+	curses.wrapper(menu.MyApp)   
+
+if __name__== "__main__":
+	main()
